@@ -1,8 +1,8 @@
 class Kickstart < Formula
   desc "Scaffolding tool to get new projects up and running quickly"
   homepage "https://github.com/Keats/kickstart"
-  url "https://github.com/Keats/kickstart/archive/refs/tags/v0.4.0.tar.gz"
-  sha256 "5aae308d7d6aa021ddf7f5dc882f8199a5d4f4db8cb8f7175c1c1ac831075a8c"
+  url "https://github.com/Keats/kickstart/archive/refs/tags/v0.5.0.tar.gz"
+  sha256 "2a1a335c70b81757abf4240a52ebce231501f731f3d73decbed4133d18ad1386"
   license "MIT"
 
   bottle do
@@ -21,7 +21,7 @@ class Kickstart < Formula
   depends_on "rust" => :build
 
   def install
-    system "cargo", "install", *std_cargo_args
+    system "cargo", "install", "--features", "cli", *std_cargo_args
   end
 
   test do
